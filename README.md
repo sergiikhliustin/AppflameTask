@@ -4,3 +4,4 @@ What can be improved:
  - more async in DataService (load and filtering)
  - adopt UI for smaller devices
  - RuleMark in chart should overlap x axis
+ - Colors should be properly named
