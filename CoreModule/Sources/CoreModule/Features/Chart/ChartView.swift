@@ -90,22 +90,12 @@ struct ChartView: View {
         .chartYAxis(.hidden)
         .chartXAxis {
             AxisMarks(values: store.chartData.map { $0.date }) { axisValue in
-//                if let selectedAccount = store.selectedAccount,
-//                    selectedAccount.date == store.chartData[axisValue.index].date
-//                {
-//                    AxisTick(
-//                        centered: true,
-//                        length: 28,
-//                        stroke: StrokeStyle(lineWidth: 2)
-//                    )
-//                    .foregroundStyle(Color.cFFFFFF)
-//                } else {
-                    AxisTick(
-                        centered: true,
-                        length: 8,
-                        stroke: StrokeStyle(lineWidth: 2)
-                    )
-                    .foregroundStyle(Color.cFFFFFF_24)
+                AxisTick(
+                    centered: true,
+                    length: 8,
+                    stroke: StrokeStyle(lineWidth: 2)
+                )
+                .foregroundStyle(Color.cFFFFFF_24)
             }
         }
         .chartXSelection(value: $store.selectedDate.sending(\.onDateSelected))

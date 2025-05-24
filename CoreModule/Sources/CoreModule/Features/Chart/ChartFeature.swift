@@ -18,7 +18,9 @@ struct ChartFeature {
         let minY: Double
         let maxY: Double
         var selectedAccount: Account? = nil
-        var selectedDate: Date? = nil
+        var selectedDate: Date? {
+            return selectedAccount?.date
+        }
         init(accounts: [Account]) {
             self.accounts = accounts
             self.minY = accounts.map { $0.amount }.min() ?? 0
@@ -50,7 +52,6 @@ struct ChartFeature {
                         abs($0.date.timeIntervalSince(date)) < abs($1.date.timeIntervalSince(date))
                     })
                 state.selectedAccount = selectedAccount
-                state.selectedDate = selectedAccount?.date
                 return .run { send in
                     await send(.onAccountSelected(selectedAccount))
                 }

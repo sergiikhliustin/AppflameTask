@@ -50,5 +50,6 @@ struct AccountDetailsView: View {
             
             Spacer()
         }
+        .background(Color.cFFFFFF)
     }
 }
